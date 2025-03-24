@@ -4,7 +4,6 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { AppBar, Toolbar, Typography, Drawer, List, ListItem, ListItemIcon, ListItemText, CssBaseline, Box } from '@mui/material';
 import HomeIcon from '@mui/icons-material/Home';
 import BookIcon from '@mui/icons-material/Book';
-import AssessmentIcon from '@mui/icons-material/Assessment';
 import DashboardIcon from '@mui/icons-material/Dashboard';
 
 const drawerWidth = 240;
@@ -40,7 +39,7 @@ function App() {
         <AppBar position="fixed" style={styles.appBar}>
           <Toolbar>
             <Typography variant="h6" noWrap>
-              Student Dashboard
+              Learning Management System
             </Typography>
           </Toolbar>
         </AppBar>
@@ -59,10 +58,6 @@ function App() {
               <ListItemIcon><BookIcon /></ListItemIcon>
               <ListItemText primary="Courses" />
             </ListItem>
-            <ListItem button component={Link} to="/grades">
-              <ListItemIcon><AssessmentIcon /></ListItemIcon>
-              <ListItemText primary="Grades" />
-            </ListItem>
             <ListItem button component={Link} to="/dashboard">
               <ListItemIcon><DashboardIcon /></ListItemIcon>
               <ListItemText primary="Dashboard" />
@@ -74,7 +69,6 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/courses" element={<Courses />} />
-            <Route path="/grades" element={<Grades />} />
             <Route path="/dashboard" element={<Dashboard />} />
           </Routes>
         </main>
@@ -86,7 +80,7 @@ function App() {
 function Home() {
   return (
     <Box>
-      <Typography variant="h4">Welcome to the Student Dashboard</Typography>
+      <Typography variant="h4">Welcome to the Learning Management System</Typography>
       <Typography variant="body1">Select an option from the sidebar to get started.</Typography>
     </Box>
   );
@@ -97,15 +91,6 @@ function Courses() {
     <Box>
       <Typography variant="h4">Your Courses</Typography>
       <Typography variant="body1">Here you can view and manage your courses.</Typography>
-    </Box>
-  );
-}
-
-function Grades() {
-  return (
-    <Box>
-      <Typography variant="h4">Your Grades</Typography>
-      <Typography variant="body1">Check your grades for each course here.</Typography>
     </Box>
   );
 }
